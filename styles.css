@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.transparenttextures.com/patterns/glitter.png'), linear-gradient(to right, #00bfff, #ffea00);
+    background-blend-mode: overlay;
+}
+
+header {
+    background: linear-gradient(to right, blue, pink);
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+section h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Style Script', cursive;
+}
+
+section img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+section p {
+    color: #666;
+    font-size: 1.25em;
+    line-height: 1.8;
+}
+
+#social-impact {
+    text-align: right;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Sparkling stars effect */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.stars {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    animation: sparkle 2s infinite;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: 0;
+    overflow: hidden;
+}
+
+body::before {
+    animation: sparkle 2s infinite;
+    background: transparent;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: 0;
+    overflow: hidden;
+    display: block;
+}
+
+body::after {
+    background: transparent;
+}
+
+@keyframes starfield {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat-x;
+    animation: starfield 60s linear infinite;
+}
+
+body::before,
+body::after {
+    animation: starfield 60s linear infinite;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat-x;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+}
